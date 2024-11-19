@@ -5,7 +5,7 @@ This repo is meant for the bowling kata using a london-tdd-approach
 At Fresh-Bowl, we organize a weekly bowling game. After each game, we receive a file from the bowling system and manually calculate the total scores. As you can imagine, this process is time-consuming and prone to errors. Therefore, we want to automate this process. Specifically, we aim to have a system where we can upload a game file, process it to determine the game's winner, and store individual player statistics for long-term tracking.
 
 
-**Goals of the new Systeme
+**Goals of the new System**
 1. **Input Processing:** Accept the game file and extract player information.
 2. **Score Calculation:** Calculate each player’s total score according to bowling rules.
 3. **Winner Determination:** Identify the winner of the game based on scores.

@@ -2,44 +2,43 @@
 This repo is meant for the bowling kata using a london-tdd-approach
 
 ## The Kata
-We at Fresh-Bowl, are organising a weekly game of bowling.
-When a Game is finished we receive a file from the bowling system and need to calculate the total scores by hand. As you can imagine this is time consuming and error prone.
-And theirfore wish to change this process from a manual task to a more automatic task. Theirfore we wish that to have a system where we could give in a gamefile and process this to determine the winner for the game.
-We also wish to store the game information for each person. So that at the end of the year we can give each players their average bowling score and how many games they won.
+At Fresh-Bowl, we organize a weekly bowling game. After each game, we receive a file from the bowling system and manually calculate the total scores. As you can imagine, this process is time-consuming and prone to errors. Therefore, we want to automate this process. Specifically, we aim to have a system where we can upload a game file, process it to determine the game's winner, and store individual player statistics for long-term tracking.
 
-Processing means:
 
-1. We extract the players data (name)
-2. We calculate the score for each of the players.
-3. Determine the winner of the game.
-4. We than wish to store the game information for each player (separately) with the game information (Game date, score, end position).
-   When there is already a file for the player than the information is added.
-5. We Give back the name of the winner of the game.
+**Goals of the new Systeme
+1. **Input Processing:** Accept the game file and extract player information.
+2. **Score Calculation:** Calculate each player’s total score according to bowling rules.
+3. **Winner Determination:** Identify the winner of the game based on scores.
+4. **Data Storage:** Store each player’s game details, including the game date, score, and finishing position. If a player’s record already exists, append the new data to their file.
+5. **Statistics:** WProvide end-of-year reports for players, including their average score and the number of games won.
+
+
+**Game Processing Steps**
+
+1. Extract each player's name and roll data from the input file.
+2. Compute scores for each player following bowling rules.
+3. Determine the winner based on the highest score.
+4. Save game information for each player (e.g., game date, score, position) in their respective files.
+5. Return the name of the winner.
 
 ## Input File:
-FileName Game_2_2024_11_15 (foormat is Game_x_YYYY_MM_DD
+**FileName**:  Game_2_2024_11_15
+(format:Game_x_YYYY_MM_DD)
 
+```
 Sjaak, 1,4,4,5,6,4,5,5,10,0,1,7,3,6,4,10,2,8,6
 Piet,  10,1,3,8,2,10,0,0,8,0,7,2,8,1,10,10,10,6
+```
 Each Line starts with the players name, continuing with the pins rolled for each throw.
 
-## Bowling Rules
-The game consists of 10 frames. In each frame the player has
-two opportunities to knock down 10 pins. The score for the frame is the total
-number of pins knocked down, plus bonuses for strikes and spares.
+## Bowling Scoring Rules
+1. A game consists of 10 frames, with each frame allowing a maximum of two rolls to knock down 10 pins.
+2. Spare: If all 10 pins are knocked down in two rolls, the frame's score includes the 10 pins plus a bonus equal to the number of pins knocked down on the next roll.
+    Example: Rolls 4,6,4 → Frame score = 10 (spare) + 4 (bonus) = 14.
 
-A spare is when the player knocks down all 10 pins in two tries.
-The bonus for a spare is the number of pins knocked down by the next roll.
-For example if the input file starts with 4,6,4:
-the 4 + 6 are in the same frame and add up to 10 so we have a spare.
-We add a bonus of 4 (the third roll) to this frame as a result.
-
-A strike is when the player knocks down all 10 pins on his first try.  The bonus
-for that frame is the value of the next two balls rolled.
-
-Special rule for 10th frame.
-
-In the tenth frame a player who rolls a spare or strike is allowed to roll extra for the bonus score of the game.
-For a spare this means 1 extra roll. For a Strike two extra rolls
+3. Strike: If all 10 pins are knocked down in the first roll of a frame, the frame's score includes the 10 pins plus a bonus equal to the total of the next two rolls.
+4. 10th Frame Special Rule:
+    If a player scores a spare in the 10th frame, they get 1 extra roll for the bonus.
+    If a player scores a strike in the 10th frame, they get 2 extra rolls for the bonus.
 
 

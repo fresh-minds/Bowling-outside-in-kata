@@ -19,7 +19,7 @@ At Fresh-Bowl, we organize a weekly bowling game. After each game, we receive a 
 2. Compute scores for each player following bowling rules.
 3. Determine the winner based on the highest score.
 4. Save game information for each player (e.g., game date, score, position) in their respective files.
-5. Return the name of the winner.
+5. Return the name of the winner. Or Draw: player1, player2
 
 ## Input File:
 **FileName**:  Game_2_2024_11_15
